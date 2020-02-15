@@ -7,6 +7,7 @@ package testlogin;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import com.tgt.Service.ServiceCentre;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,7 +43,7 @@ public class FXMLDocumentController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("connexion.fxml"));
             
             
-            Parent root = (Parent) fxmlLoader.load();
+           Parent root = (Parent) fxmlLoader.load();
            ConnexionController apc=fxmlLoader.getController();
            apc.setTnom1((JFXTextField) tnom);
            tnom.getScene().setRoot(root);

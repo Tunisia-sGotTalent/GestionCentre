@@ -7,23 +7,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1321.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="testlogin.ConnexionController">
+<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1321.0" xmlns="http://javafx.com/javafx/8.0.5" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.ConnexionController">
    <children>
       <JFXTextField fx:id="tnom1" layoutX="138.0" layoutY="141.0" />
-      <ImageView fitHeight="789.0" fitWidth="1335.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="789.0" fitWidth="1335.0" onDragDetected="#connexionAction" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Interface%20de%20connexion.png" />
+            <Image url="@image/Interface%20de%20connexion.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="retour" fitHeight="31.0" fitWidth="49.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="46.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@retour.png" />
+            <Image url="@image/retour.png" />
          </image>
       </ImageView>
-      <JFXTextField layoutX="70.0" layoutY="328.0" prefHeight="31.0" prefWidth="339.0" promptText="Nom d'utilisateur" />
-      <JFXTextField layoutX="65.0" layoutY="403.0" prefHeight="31.0" prefWidth="352.0" promptText="Mot de passe" />
-      <JFXButton layoutX="84.0" layoutY="541.0" prefHeight="31.0" prefWidth="277.0" text="Connexion">
+      <JFXTextField fx:id="nom_utilisateur" layoutX="70.0" layoutY="328.0" prefHeight="31.0" prefWidth="339.0" promptText="Nom d'utilisateur" />
+      <JFXTextField fx:id="mot_de_passe" cache="true" layoutX="65.0" layoutY="403.0" prefHeight="31.0" prefWidth="352.0" promptText="Mot de passe" />
+      <JFXButton layoutX="84.0" layoutY="541.0" onAction="#connexionAction" prefHeight="31.0" prefWidth="277.0" text="Connexion">
          <font>
             <Font size="29.0" />
          </font>

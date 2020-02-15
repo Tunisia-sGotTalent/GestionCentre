@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1321.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="testlogin.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1321.0" xmlns="http://javafx.com/javafx/8.0.5" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.FXMLDocumentController">
    <children>
       <JFXTextField fx:id="tnom" layoutX="164.0" layoutY="643.0" />
       <ImageView fitHeight="847.0" fitWidth="1335.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Interface%20d'accueil.png" />
+            <Image url="@image/Interface%20d'accueil.png" />
          </image>
       </ImageView>
       <JFXButton fx:id="connexion" layoutX="183.0" layoutY="474.0" onAction="#connexion" prefHeight="51.0" prefWidth="170.0" text="Connexion" textFill="RED">
