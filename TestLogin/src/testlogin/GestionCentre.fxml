@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.lynden.gmapsfx.GoogleMapView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -10,49 +11,63 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1330.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.5" fx:controller="testlogin.GestionCentreController">
+<AnchorPane id="AnchorPane" prefHeight="627.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.GestionCentreController">
    <children>
       <JFXTextField fx:id="tnom1" layoutX="148.0" layoutY="151.0" />
-      <ImageView fitHeight="789.0" fitWidth="1335.0" onDragDetected="#connexionAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="773.0" fitWidth="1070.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/Interface%20d’accueil%20d'administrateur.png" />
+            <Image url="@image/Interface%20module.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="46.0" fitWidth="46.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/retour.png" />
-         </image>
-      </ImageView>
-      <JFXButton layoutX="23.0" layoutY="210.0" onAction="#connexionAction" prefHeight="41.0" prefWidth="220.0" text="Gestion utilisateurs">
-         <font>
-            <Font name="Times New Roman" size="22.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="29.0" layoutY="251.0" prefHeight="48.0" prefWidth="220.0" text="Gestion formations">
-         <font>
-            <Font name="Times New Roman" size="22.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="47.0" layoutY="299.0" onAction="#gestionCentreAction" prefHeight="25.0" prefWidth="183.0" text="Gestion centres">
-         <font>
-            <Font name="Times New Roman" size="22.0" />
-         </font>
-      </JFXButton>
-      <TableView fx:id="Table_Centre" layoutX="309.0" layoutY="251.0" prefHeight="375.0" prefWidth="450.0">
-        <columns>
-          <TableColumn fx:id="col_nom" prefWidth="75.0" text="Le centre" />
-          <TableColumn fx:id="col_adresse" prefWidth="75.0" text="Son adresse" />
-            <TableColumn fx:id="col_domaine" prefWidth="75.0" text="son domaine" />
-            <TableColumn fx:id="col_mail" prefWidth="75.0" text="Son adresse mail" />
-            <TableColumn fx:id="col_numero" prefWidth="75.0" text="Son numéro" />
-            <TableColumn fx:id="col_image" prefWidth="75.0" />
-        </columns>
-      </TableView>
-      <Label layoutX="309.0" layoutY="198.0" text="Les centres que vous avez ajouté" textFill="RED">
+      <Label layoutX="546.0" layoutY="69.0" text="Voici vos centres" textFill="#e42727">
          <font>
             <Font name="Times New Roman" size="22.0" />
          </font>
       </Label>
+      <JFXTextField fx:id="nom_centre" layoutX="68.0" layoutY="176.0" opacity="0.44" text="nom" />
+      <JFXTextField fx:id="adresse_centre" layoutX="68.0" layoutY="230.0" opacity="0.44" text="adresse" />
+      <Label layoutX="46.0" layoutY="132.0" text="Voulez-vous ajouter un centre? ">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="das_centre" layoutX="68.0" layoutY="284.0" opacity="0.44" text="domaine d'activités" />
+      <JFXTextField fx:id="mail_centre" layoutX="68.0" layoutY="347.0" opacity="0.44" prefHeight="25.0" prefWidth="153.0" text="ex adressemail@gmail.com" />
+      <JFXTextField fx:id="numero_centre" layoutX="68.0" layoutY="402.0" opacity="0.44" promptText="n° téléphone" />
+      <JFXButton fx:id="ajouter_centre" layoutX="109.0" layoutY="513.0" onAction="#ajouterCentreAction" text="Ajouter">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="image_centre" layoutX="68.0" layoutY="460.0" opacity="0.44" promptText="n° téléphone" text="chemin absolu de votre image" />
+      <GoogleMapView fx:id="mapView" layoutX="507.0" layoutY="432.0" prefHeight="173.0" prefWidth="477.0" />
+      <JFXTextField fx:id="adresseto" layoutX="222.0" layoutY="230.0" onAction="#mapInitialized" />
+      <JFXButton layoutX="260.0" layoutY="302.0" onAction="#toTextFieldAction" text="rechercher" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="333.0" layoutY="551.0" onMouseClicked="#imprimerListeCentre" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/imprime.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="42.0" layoutX="206.0" layoutY="457.0" onMouseClicked="#ajouterImageCentre" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/image.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="46.0" layoutY="554.0" text="Voulez-vous imprimez votre liste de centre?">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="391.0" layoutY="119.0" prefHeight="320.0" prefWidth="632.0">
+        <columns>
+          <TableColumn fx:id="col_idcentre" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="col_nomcentre" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="col_adressecentre" prefWidth="75.0" text="Adresse" />
+            <TableColumn fx:id="col_dascentre" prefWidth="75.0" text="DAS" />
+            <TableColumn fx:id="col_mailcentre" prefWidth="75.0" text="mail" />
+            <TableColumn fx:id="col_telephonecentre" prefWidth="75.0" text="telephone" />
+            <TableColumn fx:id="cil_imagecentre" prefWidth="75.0" text="telephimageone" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

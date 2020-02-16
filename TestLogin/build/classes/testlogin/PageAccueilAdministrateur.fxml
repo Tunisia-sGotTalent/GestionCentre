@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.PageAccueilAdministrateurController">
+   <children>
+      <JFXTextField fx:id="tnom1" />
+      <ImageView fitHeight="785.0" fitWidth="1335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Interface%20d’accueil%20d'administrateur.png" />
+         </image>
+      </ImageView>
+      <BorderPane fx:id="borderpane" layoutX="2.0" layoutY="146.0" prefHeight="785.0" prefWidth="1330.0" AnchorPane.bottomAnchor="-146.0">
+         <left>
+            <VBox fx:id="vbox" prefHeight="785.0" prefWidth="289.0" style="-fx-background-color: #cf0c0c;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="utilisateur" onMouseClicked="#GestionUtilisateurAction" prefHeight="25.0" prefWidth="264.0" text="Gestion utilisateurs" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="centre" onMouseClicked="#GestionCentreAction" prefHeight="25.0" prefWidth="264.0" text="Gestion centres" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="challenge" onMouseClicked="#GestionUtilisateurAction" prefHeight="25.0" prefWidth="264.0" text="Gestion challenges" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="centre11" onAction="#GestionCentreAction" onMouseClicked="#GestionUtilisateurAction" prefHeight="25.0" prefWidth="264.0" text="Gestion événements" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="centre111" onAction="#GestionCentreAction" onMouseClicked="#GestionUtilisateurAction" prefHeight="47.0" prefWidth="264.0" text="Gestion formations" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="centre1111" onAction="#GestionCentreAction" onMouseClicked="#GestionUtilisateurAction" prefHeight="25.0" prefWidth="264.0" text="Gestion reclamations" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane fx:id="ap" prefHeight="785.0" prefWidth="1078.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -6,8 +6,11 @@
 
 package com.tgt.IService;
 
+import com.tgt.Entite.Centre;
 import java.sql.SQLException;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -20,5 +23,6 @@ public interface IServiceCentre<T> {
    List<T> readAll() throws SQLException;
        public List<T> searchSelonNom(T t) throws SQLException ;
     public List<T> trierParNom() throws SQLException ;
-   
+          ObservableList<T> readAllCentreAffichage(Centre c) throws SQLException;
+  public int verifieCentre(String s);
 }

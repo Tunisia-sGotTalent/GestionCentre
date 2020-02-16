@@ -96,11 +96,11 @@ public class ConnexionController implements Initializable {
         {  
           
            
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilClient.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilAdministrateur.fxml"));
             
             
            Parent root = (Parent) fxmlLoader.load();
-           PageAccueilClientController apc=fxmlLoader.getController();
+         PageAccueilAdministrateurController apc=fxmlLoader.getController();
            apc.setTnom1((JFXTextField) tnom1);
            tnom1.getScene().setRoot(root);
            
