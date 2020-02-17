@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.lynden.gmapsfx.GoogleMapView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -19,36 +18,33 @@
             <Image url="@image/Interface%20module.png" />
          </image>
       </ImageView>
-      <Label layoutX="437.0" layoutY="84.0" text="Selectionnez le centre que vous voulez supprimer" textFill="#e42727">
+      <Label layoutX="437.0" layoutY="84.0" text="Sélectionnez  le centre que vous voulez supprimer">
          <font>
-            <Font name="Times New Roman" size="19.0" />
+            <Font name="Times New Roman" size="16.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="nom_centre" layoutX="68.0" layoutY="176.0" opacity="0.44" text="nom" />
-      <JFXTextField fx:id="adresse_centre" layoutX="68.0" layoutY="230.0" opacity="0.44" text="adresse" />
+      <JFXTextField fx:id="nom_centre" layoutX="68.0" layoutY="176.0" promptText="Nom du centre" />
+      <JFXTextField fx:id="adresse_centre" layoutX="68.0" layoutY="230.0" promptText="Adresse du centre" />
       <Label layoutX="46.0" layoutY="132.0" text="Voulez-vous ajouter un centre? ">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="das_centre" layoutX="68.0" layoutY="284.0" opacity="0.44" text="domaine d'activités" />
-      <JFXTextField fx:id="mail_centre" layoutX="68.0" layoutY="347.0" opacity="0.44" prefHeight="25.0" prefWidth="153.0" text="ex adressemail@gmail.com" />
-      <JFXTextField fx:id="numero_centre" layoutX="68.0" layoutY="402.0" opacity="0.44" promptText="n° téléphone" />
-      <JFXButton fx:id="ajouter_centre" layoutX="109.0" layoutY="513.0" onAction="#ajouterCentreAction" text="Ajouter">
+      <JFXTextField fx:id="das_centre" layoutX="68.0" layoutY="284.0" promptText="Domaine d'activités" />
+      <JFXTextField fx:id="mail_centre" layoutX="68.0" layoutY="347.0" prefHeight="25.0" prefWidth="153.0" promptText="Nom@gmail.com" />
+      <JFXTextField fx:id="numero_centre" layoutX="68.0" layoutY="402.0" promptText="n° téléphone" />
+      <JFXButton fx:id="ajouter_centre" layoutX="113.0" layoutY="503.0" onAction="#ajouterCentreAction" text="Ajouter">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="image_centre" layoutX="68.0" layoutY="460.0" opacity="0.44" promptText="n° téléphone" text="chemin absolu de votre image" />
-      <GoogleMapView fx:id="mapView" layoutX="507.0" layoutY="432.0" prefHeight="173.0" prefWidth="477.0" />
-      <JFXTextField fx:id="adresseto" layoutX="222.0" layoutY="230.0" onAction="#mapInitialized" />
-      <JFXButton layoutX="260.0" layoutY="302.0" onAction="#toTextFieldAction" text="rechercher" />
+      <JFXTextField fx:id="image_centre" layoutX="68.0" layoutY="460.0" prefHeight="25.0" prefWidth="168.0" promptText="Chemin absolu de votre image" />
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="333.0" layoutY="551.0" onMouseClicked="#imprimerListeCentre" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/imprime.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="42.0" layoutX="206.0" layoutY="457.0" onMouseClicked="#ajouterImageCentre" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="42.0" layoutX="245.0" layoutY="457.0" onMouseClicked="#ajouterImageCentre" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/image.jpg" />
          </image>
@@ -69,10 +65,16 @@
             <TableColumn fx:id="col_imagecentre" onEditCommit="#modifierImageCentre" prefWidth="126.0" text="image" />
         </columns>
       </TableView>
-      <JFXButton layoutX="835.0" layoutY="82.0" onAction="#supprimerCentre" text="Supprimer">
+      <JFXButton fx:id="supprimebouton" layoutX="776.0" layoutY="78.0" onAction="#supprimerCentre" text="Supprimer">
          <font>
-            <Font name="Times New Roman" size="12.0" />
+            <Font name="Times New Roman" size="16.0" />
          </font>
       </JFXButton>
+      <JFXButton layoutX="774.0" layoutY="50.0" onAction="#rechercherCentreAction" text="Rechercher">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="nom_chercher" layoutX="440.0" layoutY="53.0" prefHeight="25.0" prefWidth="322.0" promptText="Tapez le nom du centre à chercher " />
    </children>
 </AnchorPane>

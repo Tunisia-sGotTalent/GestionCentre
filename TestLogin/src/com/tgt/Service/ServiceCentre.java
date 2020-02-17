@@ -74,14 +74,14 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         String requeteSearch = "Select * from `centre` WHERE nom_centre='" + t.getNom_centre() + "';";
         ResultSet rs = ste.executeQuery(requeteSearch);
         while (rs.next()) {
-
+            int id = rs.getInt("id_centre");
             String nom = rs.getString("nom_centre");
             String adresse = rs.getString("adresse_centre");
             String das = rs.getString("das_centre");
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
-
-            Centre p = new Centre(nom, adresse, das, mail, telephone);
+            String image = rs.getString("image_centre");
+            Centre p = new Centre(id,nom, adresse, das, mail, telephone,image);
             arr.add(p);
         }
         return arr;

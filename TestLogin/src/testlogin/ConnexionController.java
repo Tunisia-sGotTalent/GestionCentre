@@ -5,6 +5,7 @@
  */
 package testlogin;
 
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.tgt.Entite.Centre;
 import com.tgt.Service.ServiceCentre;
@@ -38,7 +39,7 @@ public class ConnexionController implements Initializable {
     @FXML
     private JFXTextField nom_utilisateur;
     @FXML
-    private JFXTextField mot_de_passe;
+    private JFXPasswordField mot_de_passe;
 
     /**
      * Initializes the controller class.
