@@ -84,8 +84,8 @@ public class ConnexionController implements Initializable {
      Centre C=new Centre();
              ServiceCentre ser = new ServiceCentre();
 
-          C.setNom_Centre(nom_utilisateur.getText());
-                    C.setAdresse_Centre(nom_utilisateur.getText());
+          C.setNom_centre(nom_utilisateur.getText());
+                    C.setAdresse_centre(nom_utilisateur.getText());
  
    
   try {
@@ -105,10 +105,11 @@ public class ConnexionController implements Initializable {
            tnom1.getScene().setRoot(root);
            
         }
-        }catch (IOException e) {
+        }
+catch (IOException e) {
             System.out.println("can't load new window");
         }
-        } catch (SQLException ex) {
+       } catch (SQLException ex) {
             System.out.println(ex);
         }
     }

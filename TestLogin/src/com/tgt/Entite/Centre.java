@@ -64,62 +64,63 @@ public class Centre implements Comparable<Centre>{
 
     }
 
-    public int getId_Centre() {
+    public int getId_centre() {
         return id_centre;
     }
 
-    public void setId_Centre(int id) {
-        this.id_centre = id;
+    public void setId_centre(int id_centre) {
+        this.id_centre = id_centre;
     }
 
-    public String getNom_Centre() {
+    public String getNom_centre() {
         return nom_centre;
     }
 
-    public void setNom_Centre(String nom) {
-        this.nom_centre = nom;
+    public void setNom_centre(String nom_centre) {
+        this.nom_centre = nom_centre;
     }
 
-    public String getAdresse_Centre() {
+    public String getAdresse_centre() {
         return adresse_centre;
     }
 
-    public void setAdresse_Centre(String adresse) {
-        this.adresse_centre = adresse;
+    public void setAdresse_centre(String adresse_centre) {
+        this.adresse_centre = adresse_centre;
     }
 
-    public String getDas_Centre()
-    {
+    public String getDas_centre() {
         return das_centre;
     }
-    public void setDas_Centre(String das)
-    {
-        this.das_centre=das;
-    }
-    public String getContacte_Centre()
-    {
-        return mail_centre;
-    }
-    public void setContacte_Centre(String contacte)
-    {
-        this.mail_centre=contacte;
-    }
-    public int getNumero_Centre() {
-        return telephone_centre;
-    }
-    public void setNumero_Centre(int numero)
-    {
-        this.telephone_centre=numero;
-    }
- public String getImage_Centre() {
-        return image_centre;
-    }
-    public void setImage_Centre(String image)
-    {
-        this.image_centre=image;
+
+    public void setDas_centre(String das_centre) {
+        this.das_centre = das_centre;
     }
 
-  
+    public String getMail_centre() {
+        return mail_centre;
+    }
+
+    public void setMail_centre(String mail_centre) {
+        this.mail_centre = mail_centre;
+    }
+
+    public int getTelephone_centre() {
+        return telephone_centre;
+    }
+
+    public void setTelephone_centre(int telephone_centre) {
+        this.telephone_centre = telephone_centre;
+    }
+
+    public String getImage_centre() {
+        return image_centre;
+    }
+
+    public void setImage_centre(String image_centre) {
+        this.image_centre = image_centre;
+    }
+
+   
     @Override
     public String toString() {
         return "Centre" + "id=" + id_centre + ", nom=" + nom_centre + ", adresse=" + adresse_centre + ", domaine d'activités=" + das_centre + ", contacte" + mail_centre +", numero de téléphone" + telephone_centre + "et d'image"+image_centre + '}';

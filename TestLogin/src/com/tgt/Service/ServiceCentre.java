@@ -25,7 +25,7 @@ import javafx.collections.ObservableList;
  */
 public class ServiceCentre implements IServiceCentre<Centre> {
 
-    private Connection con;
+    private final Connection con;
     private Statement ste;
     public ServiceCentre() {
         con = DataBase.getInstance().getConnection();
@@ -36,7 +36,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
     public void ajouter(Centre t) throws SQLException {
         ste = con.createStatement();
         String requeteInsert = "INSERT INTO `centre`(`id_centre`, `nom_centre`, `adresse_centre`, `das_centre`, `mail_centre`, `telephone_centre`,`image_centre`)"
-                + " VALUES (NULL,'" + t.getNom_Centre() + "', '" + t.getAdresse_Centre() + "', '" + t.getDas_Centre() + "', '" + t.getContacte_Centre() + "', '" + t.getNumero_Centre() + "','" + t.getImage_Centre() + "');";
+                + " VALUES (NULL,'" + t.getNom_centre() + "', '" + t.getAdresse_centre() + "', '" + t.getDas_centre() + "', '" + t.getMail_centre() + "', '" + t.getTelephone_centre() + "','" + t.getImage_centre() + "');";
         int res = ste.executeUpdate(requeteInsert);
         System.out.println(res);
     }
@@ -52,18 +52,17 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         ste = con.createStatement();
         String requeteDelete = "DELETE FROM centre WHERE nom_centre = ? ;";
         PreparedStatement pst = con.prepareStatement(requeteDelete);
-        pst.setString(1, t.getNom_Centre());
+        pst.setString(1, t.getNom_centre());
         pst.executeUpdate();
         /*int res= ste.executeUpdate(requeteDelete);
          System.out.print(res);*/
     }
 
     @Override
-    public void updateSelonNom(Centre t) throws SQLException {
+    public void updateSelonId(Centre t) throws SQLException {
         ste = con.createStatement();
-        String requeteUpdate = "UPDATE `centre` SET `adresse_centre`='" + t.getAdresse_Centre() + "',"
-                + "`das_centre`='" + t.getDas_Centre() + "',`mail_centre`='" + t.getContacte_Centre() + "' WHERE nom_centre='" + t.getNom_Centre() + "' ;";
-
+        String requeteUpdate = "Update `centre` SET `nom_centre` ='" + t.getNom_centre() + "', `adresse_centre` ='" + t.getAdresse_centre() + "', `das_centre` ='" + t.getDas_centre() + "',`mail_centre` ='" + t.getTelephone_centre() + "' ,`image_centre`='" + t.getImage_centre()+ "' WHERE id_centre ='" + t.getId_centre() + "' ;";
+     System.out.println("hh");
         ste.executeUpdate(requeteUpdate);
 
     }
@@ -72,7 +71,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
     public List<Centre> searchSelonNom(Centre t) throws SQLException {
         ste = con.createStatement();
         List<Centre> arr = new ArrayList<>();
-        String requeteSearch = "Select * from `centre` WHERE nom_centre='" + t.getNom_Centre() + "';";
+        String requeteSearch = "Select * from `centre` WHERE nom_centre='" + t.getNom_centre() + "';";
         ResultSet rs = ste.executeQuery(requeteSearch);
         while (rs.next()) {
 
@@ -114,12 +113,12 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         List<Centre> arr = new ArrayList<>();
         ServiceCentre ser = new ServiceCentre();
         arr = ser.readAll();
-        Collections.sort(arr, (e1, e2) -> e1.getNom_Centre().compareTo(e2.getNom_Centre()));
+        Collections.sort(arr, (e1, e2) -> e1.getNom_centre().compareTo(e2.getNom_centre()));
         return arr;
     }
 
     @Override
-    public ObservableList<Centre> readAllCentreAffichage(Centre c) throws SQLException {
+    public ObservableList<Centre> readAllCentreAffichage() throws SQLException {
 
         ObservableList<Centre> arr = FXCollections.observableArrayList();
         ste = con.createStatement();
@@ -132,10 +131,10 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
-            arr.add(c);
+            
             arr.add(new Centre(id,nom,adresse,das,mail,telephone,image));
-        
-          //  System.out.println("jjjj");     
+           
+            //  System.out.println("jjjj");     
         }
         return arr;
 
@@ -157,4 +156,5 @@ public class ServiceCentre implements IServiceCentre<Centre> {
 
  
 }
+  
 }   

@@ -19,9 +19,9 @@
             <Image url="@image/Interface%20module.png" />
          </image>
       </ImageView>
-      <Label layoutX="546.0" layoutY="69.0" text="Voici vos centres" textFill="#e42727">
+      <Label layoutX="437.0" layoutY="84.0" text="Selectionnez le centre que vous voulez supprimer" textFill="#e42727">
          <font>
-            <Font name="Times New Roman" size="22.0" />
+            <Font name="Times New Roman" size="19.0" />
          </font>
       </Label>
       <JFXTextField fx:id="nom_centre" layoutX="68.0" layoutY="176.0" opacity="0.44" text="nom" />
@@ -61,13 +61,18 @@
       <TableView fx:id="table" layoutX="391.0" layoutY="119.0" prefHeight="320.0" prefWidth="632.0">
         <columns>
           <TableColumn fx:id="col_idcentre" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="col_nomcentre" prefWidth="75.0" text="Nom" />
-            <TableColumn fx:id="col_adressecentre" prefWidth="75.0" text="Adresse" />
-            <TableColumn fx:id="col_dascentre" prefWidth="75.0" text="DAS" />
-            <TableColumn fx:id="col_mailcentre" prefWidth="75.0" text="mail" />
-            <TableColumn fx:id="col_telephonecentre" prefWidth="75.0" text="telephone" />
-            <TableColumn fx:id="cil_imagecentre" prefWidth="75.0" text="telephimageone" />
+          <TableColumn fx:id="col_nomcentre" onEditCommit="#modifierNomCentre" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="col_adressecentre" onEditCommit="#modifierAdresseCentre" prefWidth="75.0" text="Adresse" />
+            <TableColumn fx:id="col_dascentre" onEditCommit="#modifierDasCentre" prefWidth="75.0" text="DAS" />
+            <TableColumn fx:id="col_mailcentre" onEditCommit="#modifierMailCentre" prefWidth="75.0" text="mail" />
+            <TableColumn fx:id="col_telephonecentre" onEditCommit="#modifierTelephoneCentre" prefWidth="75.0" text="telephone" />
+            <TableColumn fx:id="col_imagecentre" onEditCommit="#modifierImageCentre" prefWidth="126.0" text="image" />
         </columns>
       </TableView>
+      <JFXButton layoutX="835.0" layoutY="82.0" onAction="#supprimerCentre" text="Supprimer">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
