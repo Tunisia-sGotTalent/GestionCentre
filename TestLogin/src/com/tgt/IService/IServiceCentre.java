@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.tgt.IService;
 
 //import com.tgt.Entite.Centre;
@@ -18,19 +17,20 @@ import java.util.List;
  * @param <T>
  */
 public interface IServiceCentre<T> {
-    void ajouter(T t) throws SQLException;
-    void deleteSelonNomCentre(T t) throws SQLException;
-   void updateSelonId(T t) throws SQLException;
-   List<T> readAll() throws SQLException;
-       public List<T> searchSelonNom(T t) throws SQLException ;
-    public List<T> trierParNom() throws SQLException ;
 
-    /**
-     *
-     * @param t
-     * @return
-     * @throws SQLException
-     */
+    void ajouter(T t) throws SQLException;
+
+    void deleteSelonNomCentre(T t) throws SQLException;
+
+    void updateSelonId(T t) throws SQLException;
+
+    List<T> readAll() throws SQLException;
+
+    public List<T> searchSelonNom(T t) throws SQLException;
+
+    public List<T> trierParNom() throws SQLException;
+
     public List<T> readAllCentreAffichage() throws SQLException;
-  public int verifieCentre(String s);
+
+    public int verifieCentre(String s);
 }

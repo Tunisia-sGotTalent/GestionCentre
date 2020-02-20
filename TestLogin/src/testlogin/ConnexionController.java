@@ -29,9 +29,6 @@ import javafx.scene.input.MouseEvent;
  *
  * @author 21695
  */
-
-
-    
 public class ConnexionController implements Initializable {
 
     @FXML
@@ -44,76 +41,61 @@ public class ConnexionController implements Initializable {
     /**
      * Initializes the controller class.
      */
-     public void setTnom1(JFXTextField tnom1) {
-        this.tnom1.setText(tnom1.getText());    }
+    public void setTnom1(JFXTextField tnom1) {
+        this.tnom1.setText(tnom1.getText());
+    }
 
     public JFXTextField getTnom1() {
         return tnom1;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-
-
- 
+    
+    }
 
     @FXML
     private void retour(MouseEvent event) {
-    
 
-          try {
-        
+        try {
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-            
-            
             Parent root = (Parent) fxmlLoader.load();
-            FXMLDocumentController apc=fxmlLoader.getController();
-           apc.setTnom((JFXTextField)tnom1);
-           
-           tnom1.getScene().setRoot(root);
-          
-              } catch (IOException e) {
+            FXMLDocumentController apc = fxmlLoader.getController();
+            apc.setTnom((JFXTextField) tnom1);
+            tnom1.getScene().setRoot(root);
+
+        } catch (IOException e) {
             System.out.println("can't load new window");
         }
-        
-        
+
     }
 
     @FXML
     private void connexionAction(ActionEvent event) throws IOException, SQLException {
-     Centre C=new Centre();
-             ServiceCentre ser = new ServiceCentre();
+        Centre C = new Centre();
+        ServiceCentre ser = new ServiceCentre();
+        C.setNom_centre(nom_utilisateur.getText());
+        C.setAdresse_centre(nom_utilisateur.getText());
 
-          C.setNom_centre(nom_utilisateur.getText());
-                    C.setAdresse_centre(nom_utilisateur.getText());
- 
-   
-  try {
         try {
-       
-           
-        if(!( ser.searchSelonNom(C)).isEmpty())
-        {  
-          
-           
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilAdministrateur.fxml"));
-            
-            
-           Parent root = (Parent) fxmlLoader.load();
-         PageAccueilAdministrateurController apc=fxmlLoader.getController();
-           apc.setTnom1((JFXTextField) tnom1);
-           tnom1.getScene().setRoot(root);
-           
-        }
-        }
-catch (IOException e) {
-            System.out.println("can't load new window");
-        }
-       } catch (SQLException ex) {
+            try {
+
+                if (!(ser.searchSelonNom(C)).isEmpty()) {
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilClient.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                  PageAccueilClientController apc = fxmlLoader.getController();
+                    apc.setTnom1((JFXTextField) tnom1);
+                    tnom1.getScene().setRoot(root);
+
+                }
+            } catch (IOException e) {
+                System.out.println("can't load new window");
+            }
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
     }
-         
-}
 
+}

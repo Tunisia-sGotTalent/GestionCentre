@@ -96,7 +96,6 @@ public class GestionCentreController implements Initializable {
     @FXML
     private JFXTextField image_centre;
 
-
     @FXML
     private JFXButton ajouter_centre;
     private FileChooser image;
@@ -158,6 +157,7 @@ public class GestionCentreController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Veuillez saisir une adresse mail sous cette forme ex nom@gmail.com");
             }
         }
+        list.clear();
         list.addAll(ser.readAll());
 
     }
@@ -172,7 +172,7 @@ public class GestionCentreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-   
+
         col_idcentre.setCellValueFactory(new PropertyValueFactory<>("id_centre"));
         col_nomcentre.setCellValueFactory(new PropertyValueFactory<>("nom_centre"));
         col_adressecentre.setCellValueFactory(new PropertyValueFactory<>("adresse_centre"));
@@ -226,8 +226,6 @@ public class GestionCentreController implements Initializable {
         }
         return path;
     }
-
-   
 
     @FXML
     void imprimerListeCentre(MouseEvent event) {

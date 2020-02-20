@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package testlogin;
 
 import com.jfoenix.controls.JFXButton;
@@ -29,7 +28,8 @@ import javafx.scene.layout.VBox;
  * @author ASUS
  */
 public class PageAccueilAdministrateurController implements Initializable {
-   @FXML
+
+    @FXML
     private JFXTextField tnom1;
 
     @FXML
@@ -62,66 +62,47 @@ public class PageAccueilAdministrateurController implements Initializable {
     /**
      * Initializes the controller class.
      */
-       public void setTnom1(JFXTextField tnom1) {
-        this.tnom1.setText(tnom1.getText());    }
+    public void setTnom1(JFXTextField tnom1) {
+        this.tnom1.setText(tnom1.getText());
+    }
 
     public JFXTextField getTnom1() {
         return tnom1;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
-    /*  @FXML
-    void GestionUtilisateurAction(MouseEvent event) {
- try {
-        
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-            
-            
-            Parent root = (Parent) fxmlLoader.load();
-            FXMLDocumentController apc=fxmlLoader.getController();
-           apc.setTnom((JFXTextField)tnom1);
-           
-           tnom1.getScene().setRoot(root);
-          
-              } catch (IOException e) {
-            System.out.println("can't load new window");
+    }
+
+    @FXML
+    public void GestionUtilisateurAction(MouseEvent event) throws IOException {
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+
+        } catch (IOException ex) {
+
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-    }*/
-     @FXML
- public   void GestionUtilisateurAction(MouseEvent event) throws IOException {
-  Parent root =null; 
-  
-        try {
-        root=FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-          
-              } catch (IOException ex) {
-                  
-Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE,null,ex);
-              }
-        
-         borderpane.setRight(root);
-    }
-     @FXML
- public   void GestionCentreAction(MouseEvent event) throws IOException {
-  Parent root =null; 
-  
-        try {
-        root=FXMLLoader.load(getClass().getResource("GestionCentre.fxml"));
-          
-              } catch (IOException ex) {
-                  
-Logger.getLogger(GestionCentreController.class.getName()).log(Level.SEVERE,null,ex);
-              }
-        
-         borderpane.setRight(root);
-    }
-           
 
-    
+        borderpane.setRight(root);
+    }
+
+    @FXML
+    public void GestionCentreAction(MouseEvent event) throws IOException {
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("GestionCentre.fxml"));
+
+        } catch (IOException ex) {
+
+            Logger.getLogger(GestionCentreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        borderpane.setRight(root);
+    }
 
 }

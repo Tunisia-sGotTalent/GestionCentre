@@ -28,11 +28,11 @@
       <MediaView fx:id="mediaView4" fitHeight="250.0" fitWidth="300.0" layoutX="56.0" layoutY="447.0" />
       <MediaView fx:id="mediaView5" fitHeight="250.0" fitWidth="300.0" layoutX="524.0" layoutY="447.0" />
       <MediaView fx:id="mediaView6" fitHeight="250.0" fitWidth="300.0" layoutX="972.0" layoutY="447.0" />
-      <MenuButton layoutX="1279.0" layoutY="151.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: red;" textFill="WHITE">
+      <MenuButton layoutX="1123.0" layoutY="151.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="212.0" style="-fx-background-color: red;" textFill="WHITE">
          <items>
-            <MenuItem fx:id="evenement" mnemonicParsing="false" onAction="#afficherEvenement" style="-fx-background-color: red;" text="Evenements" />
-            <MenuItem fx:id="challenge" mnemonicParsing="false" onAction="#afficherChallenge" style="-fx-background-color: red;" text="Challenges" />
-            <MenuItem fx:id="formation" mnemonicParsing="false" onAction="#afficherFormation" style="-fx-background-color: red;" text="Formations" />
+            <MenuItem mnemonicParsing="false" style="-fx-background-color: red;" text="Evenements" />
+            <MenuItem mnemonicParsing="false" style="-fx-background-color: red;" text="Challenges" />
+            <MenuItem mnemonicParsing="false" onAction="#afficherCentre" style="-fx-background-color: red;" text="Centres" />
          </items>
          <font>
             <Font size="20.0" />

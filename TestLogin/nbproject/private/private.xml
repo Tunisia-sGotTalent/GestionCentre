@@ -3,25 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/FXMLDocument.fxml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/IService/IServiceCentre.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/connexion.fxml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Entite/Contenu.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/GestionCentre.fxml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/MessageAlerteController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/RubriqueCentreController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/InscriptionController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/PageAccueilClient.fxml</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Service/ServiceContenu.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/nbproject/jfx-impl.xml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/IService/IServiceCentre.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/PageAccueilClientController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/IService/IServiceContenu.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/GestionCentreController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Utils/DataBase.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/inscription.fxml</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Entite/Centre.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/connexion.fxml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Entite/Contenu.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/PageAccueilAdministrateurController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/ConnexionController.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/GestionCentre.fxml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/FXMLDocumentController.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/TestLogin.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/MessageAlerteController.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/InscriptionController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/PageAccueilAdministrateur.fxml</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/com/tgt/Service/ServiceCentre.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/RubriqueCentre.fxml</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjectsE/TestLogin/src/testlogin/MessageAlerte.fxml</file>
         </group>
     </open-files>

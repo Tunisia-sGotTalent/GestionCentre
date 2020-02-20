@@ -62,8 +62,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
     public void updateSelonId(Centre t) throws SQLException {
         ste = con.createStatement();
         String requeteUpdate = "Update `centre` SET `nom_centre` ='" + t.getNom_centre() + "', `adresse_centre` ='" + t.getAdresse_centre() + "', `das_centre` ='" + t.getDas_centre() + "',`mail_centre` ='" + t.getTelephone_centre() + "' ,`image_centre`='" + t.getImage_centre()+ "' WHERE id_centre ='" + t.getId_centre() + "' ;";
-     System.out.println("hh");
-        ste.executeUpdate(requeteUpdate);
+    ste.executeUpdate(requeteUpdate);
 
     }
 
@@ -102,7 +101,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
 
-            Centre p = new Centre(id, nom, adresse, das, mail, telephone);
+            Centre p = new Centre(id, nom, adresse, das, mail, telephone,image);
             arr.add(p);
         }
         return arr;
@@ -131,11 +130,8 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
-            
-            arr.add(new Centre(id,nom,adresse,das,mail,telephone,image));
-           
-            //  System.out.println("jjjj");     
-        }
+            arr.add(new Centre(id,nom,adresse,das,mail,telephone,image));    
+      }
         return arr;
 
     }

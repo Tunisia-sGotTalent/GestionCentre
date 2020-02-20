@@ -49,7 +49,7 @@
             <Image url="@image/image.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="46.0" layoutY="554.0" text="Voulez-vous imprimez votre liste de centre?">
+      <Label layoutX="46.0" layoutY="554.0" text="Voulez-vous imprimer votre liste de centre?">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
@@ -59,10 +59,10 @@
           <TableColumn fx:id="col_idcentre" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="col_nomcentre" onEditCommit="#modifierNomCentre" prefWidth="75.0" text="Nom" />
             <TableColumn fx:id="col_adressecentre" onEditCommit="#modifierAdresseCentre" prefWidth="75.0" text="Adresse" />
-            <TableColumn fx:id="col_dascentre" onEditCommit="#modifierDasCentre" prefWidth="75.0" text="DAS" />
-            <TableColumn fx:id="col_mailcentre" onEditCommit="#modifierMailCentre" prefWidth="75.0" text="mail" />
-            <TableColumn fx:id="col_telephonecentre" onEditCommit="#modifierTelephoneCentre" prefWidth="75.0" text="telephone" />
-            <TableColumn fx:id="col_imagecentre" onEditCommit="#modifierImageCentre" prefWidth="126.0" text="image" />
+            <TableColumn fx:id="col_dascentre" onEditCommit="#modifierDasCentre" prefWidth="75.0" text="Activité" />
+            <TableColumn fx:id="col_mailcentre" onEditCommit="#modifierMailCentre" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="col_telephonecentre" onEditCommit="#modifierTelephoneCentre" prefWidth="75.0" text="Telephone" />
+            <TableColumn fx:id="col_imagecentre" onEditCommit="#modifierImageCentre" prefWidth="126.0" text="Image" />
         </columns>
       </TableView>
       <JFXButton fx:id="supprimebouton" layoutX="776.0" layoutY="78.0" onAction="#supprimerCentre" text="Supprimer">
