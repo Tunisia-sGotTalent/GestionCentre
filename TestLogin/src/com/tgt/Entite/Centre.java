@@ -6,6 +6,8 @@
 
 package com.tgt.Entite;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author ASUS
@@ -18,6 +20,7 @@ public class Centre implements Comparable<Centre>{
     private String mail_centre;
     private int telephone_centre;
     private String image_centre;
+    private ImageView photo_centre;
     public Centre()
     { this.id_centre=0;
         this.nom_centre="";
@@ -28,6 +31,8 @@ public class Centre implements Comparable<Centre>{
         this.image_centre="";
 
     }
+
+    
     public Centre(int id, String nom, String adresse, String das,String contacte, int numero) {
         this.id_centre = id;
         this.nom_centre = nom;
@@ -39,6 +44,18 @@ public class Centre implements Comparable<Centre>{
        
 
         
+    }
+    public Centre(int id_centre,ImageView photo_centre, String nom, String adresse, String das,String contacte, int numero) {
+        this.id_centre = id_centre;
+        this.nom_centre = nom;
+        this.adresse_centre = adresse;
+        this.das_centre=das;
+        this.mail_centre=contacte;
+        this.telephone_centre = numero;
+        this.photo_centre=photo_centre;
+     //  this.image_centre=image_centre;
+
+        System.out.println("Image object"+this.photo_centre);
     }
     
     public Centre(int id, String nom, String adresse, String das,String contacte, int numero,String image) {
@@ -118,6 +135,14 @@ public class Centre implements Comparable<Centre>{
 
     public void setImage_centre(String image_centre) {
         this.image_centre = image_centre;
+    }
+
+    public ImageView getPhoto_centre() {
+        return photo_centre;
+    }
+
+    public void setPhoto_centre(ImageView photo_centre) {
+        this.photo_centre = photo_centre;
     }
 
    

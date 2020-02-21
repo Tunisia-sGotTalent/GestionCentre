@@ -18,6 +18,8 @@ import java.util.Collections;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -61,6 +63,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
     @Override
     public void updateSelonId(Centre t) throws SQLException {
         ste = con.createStatement();
+        System.out.println(t.getImage_centre());
         String requeteUpdate = "Update `centre` SET `nom_centre` ='" + t.getNom_centre() + "', `adresse_centre` ='" + t.getAdresse_centre() + "', `das_centre` ='" + t.getDas_centre() + "',`mail_centre` ='" + t.getTelephone_centre() + "' ,`image_centre`='" + t.getImage_centre()+ "' WHERE id_centre ='" + t.getId_centre() + "' ;";
     ste.executeUpdate(requeteUpdate);
 
@@ -79,9 +82,25 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             String das = rs.getString("das_centre");
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
-            String image = rs.getString("image_centre");
-            Centre p = new Centre(id,nom, adresse, das, mail, telephone,image);
-            arr.add(p);
+           // String image = rs.getString("image_centre");
+             String image = rs.getString("image_centre");
+           
+           String ch1=image.substring(0,9);
+           String ch2=image.substring(9, 14);
+            String ch3=image.substring(14, image.length());
+            String imagefinale=ch1+"/"+ch2+"/"+ch3;
+        /*    System.out.println(imagefinale);
+            System.out.println(ch1);
+            System.out.println(ch2);
+            System.out.println(ch3);
+           System.out.println("tes");
+          */  //ImageView em1=new ImageView(new Image(this.getClass().getResourceAsStream(image)));
+           ImageView em1=new ImageView(new Image(imagefinale));
+//this.getClass().getResourceAsStream(list.get(4).getImage_centre()))
+            arr.add(new Centre(id,em1,nom,adresse,das,mail,telephone));    
+   
+         //   Centre p = new Centre(id,nom, adresse, das, mail, telephone,image);
+         //   arr.add(p);
         }
         return arr;
 
@@ -135,6 +154,38 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         return arr;
 
     }
+     public ObservableList<Centre> readAllCentreImage() throws SQLException {
+
+        ObservableList<Centre> arr = FXCollections.observableArrayList();
+        ste = con.createStatement();
+        ResultSet rs = ste.executeQuery("select * from centre");
+        while (rs.next()) {
+           int id = rs.getInt("id_centre");
+            String nom = rs.getString("nom_centre");
+            String adresse = rs.getString("adresse_centre");
+            String das = rs.getString("das_centre");
+            String mail = rs.getString("mail_centre");
+            int telephone = rs.getInt("telephone_centre");
+            String image = rs.getString("image_centre");
+           
+           String ch1=image.substring(0,9);
+           String ch2=image.substring(9, 14);
+            String ch3=image.substring(14, image.length());
+            String imagefinale=ch1+"/"+ch2+"/"+ch3;
+        /*    System.out.println(imagefinale);
+            System.out.println(ch1);
+            System.out.println(ch2);
+            System.out.println(ch3);
+           System.out.println("tes");
+          */  //ImageView em1=new ImageView(new Image(this.getClass().getResourceAsStream(image)));
+           ImageView em1=new ImageView(new Image(imagefinale));
+//this.getClass().getResourceAsStream(list.get(4).getImage_centre()))
+            arr.add(new Centre(id,em1,nom,adresse,das,mail,telephone));    
+      }
+        return arr;
+
+    }
+
     @Override
   public int verifieCentre(String s)
     { int r=0;

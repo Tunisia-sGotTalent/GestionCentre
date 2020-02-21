@@ -149,8 +149,6 @@ public class GestionCentreController implements Initializable {
 
                 System.out.println(C);
                 ser.ajouter(C);
-                List<Centre> list = ser.readAll();
-                System.out.println(list);
 
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -158,7 +156,7 @@ public class GestionCentreController implements Initializable {
             }
         }
         list.clear();
-        list.addAll(ser.readAll());
+        list.addAll(ser.readAllCentreImage());
 
     }
 
@@ -179,11 +177,13 @@ public class GestionCentreController implements Initializable {
         col_dascentre.setCellValueFactory(new PropertyValueFactory<>("das_centre"));
         col_mailcentre.setCellValueFactory(new PropertyValueFactory<>("mail_centre"));
         col_telephonecentre.setCellValueFactory(new PropertyValueFactory<>("telephone_centre"));
-        col_imagecentre.setCellValueFactory(new PropertyValueFactory<>("image_centre"));
+      //  col_imagecentre.setCellValueFactory(new PropertyValueFactory<>("image_centre"));
+        col_imagecentre.setPrefWidth(80);
+        col_imagecentre.setCellValueFactory(new PropertyValueFactory<>("photo_centre"));
 
         try {
             ServiceCentre ser = new ServiceCentre();
-            list = ser.readAllCentreAffichage();
+            list = ser.readAllCentreImage();
 
         } catch (SQLException ex) {
             Logger.getLogger(GestionCentreController.class.getName()).log(Level.SEVERE, null, ex);
@@ -197,7 +197,7 @@ public class GestionCentreController implements Initializable {
         col_adressecentre.setCellFactory(TextFieldTableCell.forTableColumn());
         col_mailcentre.setCellFactory(TextFieldTableCell.forTableColumn());
         //col_telephonecentre.setCellFactory(TextFieldTableCell.forTableColumn());
-        col_imagecentre.setCellFactory(TextFieldTableCell.forTableColumn());
+        //    col_imagecentre.setCellFactory(TextFieldTableCell.forTableColumn());
 
     }
 
@@ -205,10 +205,12 @@ public class GestionCentreController implements Initializable {
     void ajouterImageCentre(MouseEvent event) {
 
         String path1 = filen();
+
         if (path1 == null) {
 
         } else {
-            image_centre.setText(path1);
+           String path2 = path1.substring(56, path1.length());
+            image_centre.setText(path2);
         }
 
     }
@@ -289,12 +291,26 @@ public class GestionCentreController implements Initializable {
     }
 
     @FXML
-    public void modifierImageCentre(CellEditEvent editcell) throws SQLException {
+    public void modifierImageCentre(MouseEvent editcell) throws SQLException {
         ServiceCentre ser = new ServiceCentre();
+
         Centre centreselectionne = table.getSelectionModel().getSelectedItem();
-        centreselectionne.setImage_centre(editcell.getNewValue().toString());
-        System.out.println(centreselectionne.getAdresse_centre());
+        String path1 = filen();
+        if (path1 == null) {
+
+        } else {
+            image_centre.setText(path1);
+        }
+        String path2 = path1.substring(56, path1.length());
+        System.out.println(path2);
+//Centre centreselectionne = table.getSelectionModel().getSelectedItem();
+        centreselectionne.setImage_centre(path2);
         ser.updateSelonId(centreselectionne);
+
+       // System.out.println(centreselectionne.getAdresse_centre());
+        //ser.updateSelonId(centreselectionne);
+        list.clear();
+        list.addAll(ser.readAllCentreImage());
 
     }
 
@@ -308,7 +324,7 @@ public class GestionCentreController implements Initializable {
                 Centre c = table.getSelectionModel().getSelectedItem();
                 ser.deleteSelonNomCentre(c);
                 list.clear();
-                list.addAll(ser.readAll());
+                list.addAll(ser.readAllCentreImage());
             } else {
                 JOptionPane.showMessageDialog(null, "Veuillez selectionner le centre à supprimer");
             }
@@ -329,7 +345,7 @@ public class GestionCentreController implements Initializable {
         } else if (ser.searchSelonNom(C).isEmpty()) {
             System.out.println("vide");
             JOptionPane.showMessageDialog(null, "Veuillez sélectionner le nom du centre à chercher");
-            list = ser.readAllCentreAffichage();
+            list = ser.readAllCentreImage();
             table.setItems((ObservableList<Centre>) list);
         }
         System.out.println(ser.searchSelonNom(C));
