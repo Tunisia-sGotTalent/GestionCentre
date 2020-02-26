@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TestLogin.jar" size="523409723" download="eager" />
+    <jar href="TestLogin.jar" size="523411610" download="eager" />
     <jar href="lib/GMapsFX-2.0.9.jar" size="166541" download="eager" />
     <jar href="lib/GMapsFX-2.10.0.jar" size="154471" download="eager" />
     <jar href="lib/GMapsFX-2.12.0.jar" size="207618" download="eager" />
@@ -35,7 +35,7 @@
     <jar href="lib/jfoenix-0.0.0-SNAPSHOT.jar" size="2685609" download="eager" />
     <jar href="lib/jfoenix-9.0.1.jar" size="2143605" download="eager" />
     <jar href="lib/json-simple-1.1.1.jar" size="23737" download="eager" />
-    <jar href="lib/mail.jar" size="521000" download="eager" />
+    <jar href="lib/mail.jar" size="462098" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="827921" download="eager" />
     <jar href="lib/pdfbox-1.4.0.jar" size="3458118" download="eager" />
     <jar href="lib/restfb-2.4.0.jar" size="1195210" download="eager" />

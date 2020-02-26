@@ -19,9 +19,10 @@
             <TableColumn fx:id="col_imagecentre" prefWidth="274.0" text="Image" />
             <TableColumn fx:id="col_nomcentre" prefWidth="174.0" text="Nom" />
             <TableColumn fx:id="col_adressecentre" prefWidth="130.0" text="Adresse" />
-            <TableColumn fx:id="col_dascentre" prefWidth="210.0" text="Activité" />
-            <TableColumn fx:id="col_mailcentre" prefWidth="207.0" text="Email" />
-            <TableColumn fx:id="col_telephonecentre" prefWidth="235.0" text="Telephone" />
+            <TableColumn fx:id="col_dascentre" prefWidth="137.0" text="Activité" />
+            <TableColumn fx:id="col_mailcentre" prefWidth="128.0" text="Email" />
+            <TableColumn fx:id="col_telephonecentre" prefWidth="136.0" text="Telephone" />
+            <TableColumn fx:id="col_notecentre" prefWidth="326.0" text="Votre note " />
          </columns>
       </TableView>
    </children>

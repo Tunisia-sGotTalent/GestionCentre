@@ -31,6 +31,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.mail.*;
 import javax.mail.internet.*;
+import  com.tgt.Service.SendMail;
 
 
 /**
@@ -104,18 +105,33 @@ public class RubriqueCentreController implements Initializable {
         try {
             List<Centre> list = (List) ser.readAllCentreAffichage();
             System.out.println(list);
-            System.out.println(list.get(1).getImage_centre());
-            System.out.println(list.get(2).getImage_centre());
-            System.out.println(list.get(0).getImage_centre());
+          //  System.out.println(list.get(1).getImage_centre());
+            //System.out.println(list.get(2).getImage_centre());
+            //System.out.println(list.get(0).getImage_centre());
             String lien1 = list.get(0).getImage_centre();
-            String lien2 = list.get(1).getImage_centre();
-            String lien3 = list.get(2).getImage_centre();
-            image = new Image(lien1);
-            image1 = new Image(lien2);
-            image2 = new Image(lien3);
-            image1_centre.setImage(image1);
-            image2_centre.setImage(image2);
+            String ch1 = lien1.substring(0, 9);
+            String ch2 = lien1.substring(9, 14);
+            String ch3 = lien1.substring(14, lien1.length());
+            String imagefinale1 = ch1 + "/" + ch2 + "/" + ch3;
+            image = new Image(imagefinale1);
             image_centre.setImage(image);
+            String lien2 = list.get(1).getImage_centre();
+            String ch11 = lien2.substring(0, 9);
+            String ch22 = lien2.substring(9, 14);
+            String ch33 = lien2.substring(14, lien2.length());
+            String imagefinale2 = ch11 + "/" + ch22 + "/" + ch33;
+            image1 = new Image(imagefinale2);
+            image1_centre.setImage(image1);
+           String lien3 = list.get(2).getImage_centre();
+            String ch111 = lien3.substring(0, 9);
+            String ch222 = lien3.substring(9, 14);
+            String ch333 = lien3.substring(14, lien3.length());
+            String imagefinale3 = ch111 + "/" + ch222 + "/" + ch333;
+            image2= new Image(imagefinale3);
+            image2_centre.setImage(image2);
+           
+            
+             
             nom_centre1.setText(list.get(0).getNom_centre());
             adresse_centre1.setText(list.get(0).getAdresse_centre());
             domaine_centre1.setText(list.get(0).getDas_centre());
@@ -152,48 +168,8 @@ public class RubriqueCentreController implements Initializable {
 
     @FXML
     private void mailCentreAction(ActionEvent event) {
-        try { 
-            ServiceCentre ser=new ServiceCentre();
-                        List<Centre> list = (List) ser.readAllCentreAffichage();
-
-            String host = "smtp.gmail.com";
-           String user = "TunisianGottalentPidev@gmail.com";
-            String pass = "Pidev123";
-            
-            String to = "hanebhar@gmail.com";
-            String from = "tunisiangottalentesprit@gmail.com";
-            String subject = "Un nouveau Evement Disponible";
-            String messageText = "Welcome  " + "Mr." +list.get(0).getAdresse_centre();
-            boolean sessionDebug = false;
-
-            Properties props = System.getProperties();
-
-            props.put("mail.smtp.starttls.enable", "true");
-            props.put("mail.smtp.host", host);
-            props.put("mail.smtp.port", "587");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.starttls.required", "true");
-            
-            java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
-            Session mailSession = Session.getDefaultInstance(props, null);
-            mailSession.setDebug(sessionDebug);
-            Message msg = new MimeMessage(mailSession);
-            msg.setFrom(new InternetAddress(from));
-            InternetAddress[] address = {new InternetAddress(to)};
-            msg.setRecipients(Message.RecipientType.TO, address);
-            msg.setSubject(subject);
-            msg.setSentDate(new Date());
-            msg.setText(messageText);
-
-            Transport transport = mailSession.getTransport("smtp");
-            transport.connect(host, user, pass);
-            transport.sendMessage(msg, msg.getAllRecipients());
-            transport.close();
-            System.out.println("message send successfully");
-        } catch (Exception ex) {
-            System.out.println(ex);
-
-        }
+       SendMail.sendMail("medmehdi.acheche@esprit.tn","jjjj","jjj");
+               
     }
 
     @FXML

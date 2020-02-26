@@ -29,6 +29,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
 
     private final Connection con;
     private Statement ste;
+
     public ServiceCentre() {
         con = DataBase.getInstance().getConnection();
 
@@ -43,12 +44,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         System.out.println(res);
     }
 
-    /*   public boolean chercher(Centre t) throws  SQLException
-     {  String requeteSelect = "SELECT `id_centre`, `nom_centre`, `adresse_centre`, `das_centre`, `mail_centre`, `telephone_centre` FROM `centre` WHERE nom_centre=='t.getNom()'";
-     ResultSet result= ste.executeQuery(requeteSelect); 
-     return result.
-     }
-     */
+  
     @Override
     public void deleteSelonNomCentre(Centre t) throws SQLException {
         ste = con.createStatement();
@@ -56,16 +52,15 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         PreparedStatement pst = con.prepareStatement(requeteDelete);
         pst.setString(1, t.getNom_centre());
         pst.executeUpdate();
-        /*int res= ste.executeUpdate(requeteDelete);
-         System.out.print(res);*/
+       
     }
 
     @Override
     public void updateSelonId(Centre t) throws SQLException {
         ste = con.createStatement();
         System.out.println(t.getImage_centre());
-        String requeteUpdate = "Update `centre` SET `nom_centre` ='" + t.getNom_centre() + "', `adresse_centre` ='" + t.getAdresse_centre() + "', `das_centre` ='" + t.getDas_centre() + "',`mail_centre` ='" + t.getTelephone_centre() + "' ,`image_centre`='" + t.getImage_centre()+ "' WHERE id_centre ='" + t.getId_centre() + "' ;";
-    ste.executeUpdate(requeteUpdate);
+        String requeteUpdate = "Update `centre` SET `nom_centre` ='" + t.getNom_centre() + "', `adresse_centre` ='" + t.getAdresse_centre() + "', `das_centre` ='" + t.getDas_centre() + "',`mail_centre` ='" + t.getTelephone_centre() + "' ,`image_centre`='" + t.getImage_centre() + "' WHERE id_centre ='" + t.getId_centre() + "' ;";
+        ste.executeUpdate(requeteUpdate);
 
     }
 
@@ -82,25 +77,17 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             String das = rs.getString("das_centre");
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
-           // String image = rs.getString("image_centre");
-             String image = rs.getString("image_centre");
-           
-           String ch1=image.substring(0,9);
-           String ch2=image.substring(9, 14);
-            String ch3=image.substring(14, image.length());
-            String imagefinale=ch1+"/"+ch2+"/"+ch3;
-        /*    System.out.println(imagefinale);
-            System.out.println(ch1);
-            System.out.println(ch2);
-            System.out.println(ch3);
-           System.out.println("tes");
-          */  //ImageView em1=new ImageView(new Image(this.getClass().getResourceAsStream(image)));
-           ImageView em1=new ImageView(new Image(imagefinale));
-//this.getClass().getResourceAsStream(list.get(4).getImage_centre()))
-            arr.add(new Centre(id,em1,nom,adresse,das,mail,telephone));    
-   
-         //   Centre p = new Centre(id,nom, adresse, das, mail, telephone,image);
-         //   arr.add(p);
+
+            String image = rs.getString("image_centre");
+            if (!image.isEmpty()) {
+                String ch1 = image.substring(0, 9);
+                String ch2 = image.substring(9, 14);
+                String ch3 = image.substring(14, image.length());
+                String imagefinale = ch1 + "/" + ch2 + "/" + ch3;
+                ImageView em1 = new ImageView(new Image(imagefinale));
+                arr.add(new Centre(id, em1, nom, adresse, das, mail, telephone));
+            }
+
         }
         return arr;
 
@@ -120,7 +107,7 @@ public class ServiceCentre implements IServiceCentre<Centre> {
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
 
-            Centre p = new Centre(id, nom, adresse, das, mail, telephone,image);
+            Centre p = new Centre(id, nom, adresse, das, mail, telephone, image);
             arr.add(p);
         }
         return arr;
@@ -142,66 +129,78 @@ public class ServiceCentre implements IServiceCentre<Centre> {
         ste = con.createStatement();
         ResultSet rs = ste.executeQuery("select * from centre");
         while (rs.next()) {
-           int id = rs.getInt("id_centre");
+            int id = rs.getInt("id_centre");
             String nom = rs.getString("nom_centre");
             String adresse = rs.getString("adresse_centre");
             String das = rs.getString("das_centre");
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
-            arr.add(new Centre(id,nom,adresse,das,mail,telephone,image));    
-      }
+            arr.add(new Centre(id, nom, adresse, das, mail, telephone, image));
+        }
         return arr;
 
     }
-     public ObservableList<Centre> readAllCentreImage() throws SQLException {
+
+    public ObservableList<Centre> readAllCentreImage() throws SQLException {
 
         ObservableList<Centre> arr = FXCollections.observableArrayList();
         ste = con.createStatement();
         ResultSet rs = ste.executeQuery("select * from centre");
         while (rs.next()) {
-           int id = rs.getInt("id_centre");
+            int id = rs.getInt("id_centre");
             String nom = rs.getString("nom_centre");
             String adresse = rs.getString("adresse_centre");
             String das = rs.getString("das_centre");
             String mail = rs.getString("mail_centre");
             int telephone = rs.getInt("telephone_centre");
             String image = rs.getString("image_centre");
-           
-           String ch1=image.substring(0,9);
-           String ch2=image.substring(9, 14);
-            String ch3=image.substring(14, image.length());
-            String imagefinale=ch1+"/"+ch2+"/"+ch3;
-        /*    System.out.println(imagefinale);
-            System.out.println(ch1);
-            System.out.println(ch2);
-            System.out.println(ch3);
-           System.out.println("tes");
-          */  //ImageView em1=new ImageView(new Image(this.getClass().getResourceAsStream(image)));
-           ImageView em1=new ImageView(new Image(imagefinale));
-//this.getClass().getResourceAsStream(list.get(4).getImage_centre()))
-            arr.add(new Centre(id,em1,nom,adresse,das,mail,telephone));    
-      }
+
+            String ch1 = image.substring(0, 9);
+            String ch2 = image.substring(9, 14);
+            String ch3 = image.substring(14, image.length());
+            String imagefinale = ch1 + "/" + ch2 + "/" + ch3;
+            System.out.print("affciiher");
+            System.out.println(imagefinale);
+            ImageView em1 = new ImageView(new Image(imagefinale));
+            arr.add(new Centre(id, em1, nom, adresse, das, mail, telephone));
+        }
         return arr;
 
     }
 
     @Override
-  public int verifieCentre(String s)
-    { int r=0;
-       for (int i=0;i<s.length();i++)
-       {  char str =s.charAt(i);
-           if ( str=='@' && i>0 && i<s.length())
-             r++;
-           if (str=='.' && i<s.length() && i>0)
-               r++;
-           if (str=='?' || str=='*' || str=='%' || str=='/' )
-           r--;
+    public int verifieCentre(String s) {
+        int r = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char str = s.charAt(i);
+            if (str == '@' && i > 0 && i < s.length()) 
+                {
+                    r++;
+                     System.out.println("test1");
+                     System.out.println(r);
+                }
+            
+            if (str == '.' && i < s.length() && i > 0) 
+                {
+                    r++;
+                     System.out.println("test2");
+                     System.out.println(r);
+                }
            
-       } 
-      return r;
+            if (str == '?' || str == '*' || str == '%' || str == '/') 
+                {
+                     r--;
+                           System.out.println("test3");
+                     System.out.println(r);
+                }
+                    
+            
 
- 
+        }
+       
+        return r;
+
+    }
+
 }
-  
-}   

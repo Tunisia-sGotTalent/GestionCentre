@@ -143,20 +143,62 @@ public class GestionCentreController implements Initializable {
         C.setDas_centre(das_centre.getText());
         C.setTelephone_centre(Integer.parseInt(numero_centre.getText()));
         C.setImage_centre(image_centre.getText());
+      /*   if(nom_centre.getText().equals("") || adresse_centre.getText().equals("") || das_centre.getText().equals("") || mail_centre.getText().equals("")  || image_centre.getText().equals("") ) {
+                           JOptionPane.showMessageDialog(null, "Veuillez saisier les champs vides");
 
-        if (JOptionPane.showConfirmDialog(null, "Voulez-vous ajouter ce centre?", "Confirmer votre ajout", JOptionPane.YES_NO_OPTION) == JOptionPane.OK_OPTION) {
+         }
+     */
+       if (JOptionPane.showConfirmDialog(null, "Voulez-vous ajouter ce centre?", "Confirmer votre ajout", JOptionPane.YES_NO_OPTION) == JOptionPane.OK_OPTION) {
             try {
+         if (ser.searchSelonNom(C).size()!=0)
+         {
+              JOptionPane.showMessageDialog(null, "Centre existant");
+         }
+         else if(nom_centre.getText().length()==0)
+         {
+            JOptionPane.showMessageDialog(null, "Veuillez saisir le nom de votre centre");
+ 
+         }
+           else if(adresse_centre.getText().length()==0)
+         {
+            JOptionPane.showMessageDialog(null, "Veuillez saisir l'adresse de votre centre");
+ 
+         }
+         else if (ser.verifieCentre(mail_centre.getText())!=2  )
+         { JOptionPane.showMessageDialog(null, "Veuillez saisir une adresse mail sous cette forme ex: nom@gmail.com");
 
+         }
+         else if (numero_centre.getText().length()!=8)
+         {              JOptionPane.showMessageDialog(null, "Veuillez saisir un numéro ");
+
+             
+         }
+           else if (image_centre.getText().length()==0)
+         {              JOptionPane.showMessageDialog(null, "Veuillez une image ");
+
+             
+         }
+         else
+         {     
                 System.out.println(C);
                 ser.ajouter(C);
-
+                JOptionPane.showMessageDialog(null, "Centre ajouté");
+           nom_centre.setText("");
+        adresse_centre.setText("");
+        mail_centre.setText("");
+        das_centre.setText("");
+       numero_centre.setText("");
+       image_centre.setText("");
+         }
             } catch (SQLException ex) {
                 System.out.println(ex);
-                JOptionPane.showMessageDialog(null, "Veuillez saisir une adresse mail sous cette forme ex nom@gmail.com");
+                JOptionPane.showMessageDialog(null, "Centre non ajouté");
             }
         }
         list.clear();
         list.addAll(ser.readAllCentreImage());
+       
+       
 
     }
 
@@ -197,7 +239,7 @@ public class GestionCentreController implements Initializable {
         col_adressecentre.setCellFactory(TextFieldTableCell.forTableColumn());
         col_mailcentre.setCellFactory(TextFieldTableCell.forTableColumn());
         //col_telephonecentre.setCellFactory(TextFieldTableCell.forTableColumn());
-        //    col_imagecentre.setCellFactory(TextFieldTableCell.forTableColumn());
+       
 
     }
 
@@ -348,7 +390,7 @@ public class GestionCentreController implements Initializable {
             list = ser.readAllCentreImage();
             table.setItems((ObservableList<Centre>) list);
         }
-        System.out.println(ser.searchSelonNom(C));
+ //       System.out.println(ser.searchSelonNom(C));
 
     }
 

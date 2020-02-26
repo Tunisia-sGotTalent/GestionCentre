@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="759.0" prefWidth="1335.0" xmlns="http://javafx.com/javafx/8.0.5" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.InscriptionController">
+   <children>
+      <JFXTextField fx:id="tnom2" layoutX="178.0" layoutY="179.0" />
+      <ImageView fitHeight="789.0" fitWidth="1335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Interface%20d'inscription.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="46.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/retour.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

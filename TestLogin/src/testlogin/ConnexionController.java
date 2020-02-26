@@ -83,9 +83,9 @@ public class ConnexionController implements Initializable {
 
                 if (!(ser.searchSelonNom(C)).isEmpty()) {
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilAdministrateur.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PageAccueilClient.fxml"));
                     Parent root = (Parent) fxmlLoader.load();
-                PageAccueilAdministrateurController apc = fxmlLoader.getController();
+                PageAccueilClientController apc = fxmlLoader.getController();
                     apc.setTnom1((JFXTextField) tnom1);
                     tnom1.getScene().setRoot(root);
 

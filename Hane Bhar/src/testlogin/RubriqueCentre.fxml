@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="789.0" prefWidth="1335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlogin.RubriqueCentreController">
+   <children>
+      <JFXTextField fx:id="tnom1" layoutX="333.0" layoutY="259.0" />
+      <ImageView fitHeight="786.0" fitWidth="1435.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Interface%20rubrique%20centre1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="10.0" layoutY="7.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/retour.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image_centre" fitHeight="193.0" fitWidth="280.0" layoutX="154.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image1_centre" fitHeight="193.0" fitWidth="280.0" layoutX="555.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image2_centre" fitHeight="193.0" fitWidth="280.0" layoutX="939.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nom_centre1" layoutX="214.0" layoutY="438.0" prefHeight="47.0" prefWidth="256.0" text="Nom centre">
+         <font>
+            <Font name="Times New Roman" size="32.0" />
+         </font></Label>
+      <Label layoutX="234.0" layoutY="491.0" text="Adresse:" textFill="RED">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresse_centre1" layoutX="314.0" layoutY="493.0" text="adresse" />
+      <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="214.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/adresse.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="234.0" layoutY="528.0" text="Domaine:" textFill="#9a0808">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="domaine_centre1" layoutX="311.0" layoutY="530.0" text="domaine" />
+      <ImageView fitHeight="36.0" fitWidth="20.0" layoutX="214.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/telephone.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="237.0" layoutY="565.0" text="Contact:" textFill="#540202">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="mail_centre1" layoutX="314.0" layoutY="568.0" text="mail" />
+      <Label fx:id="nom_centre2" layoutX="602.0" layoutY="438.0" prefHeight="47.0" prefWidth="256.0" text="Nom centre">
+         <font>
+            <Font name="Times New Roman" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="491.0" text="Adresse:" textFill="RED">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresse_centre2" layoutX="698.0" layoutY="493.0" text="adresse" />
+      <Label layoutX="620.0" layoutY="528.0" text="Domaine:" textFill="#9a0808">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="600.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/adresse.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="domaine_centre2" layoutX="695.0" layoutY="530.0" text="domaine" />
+      <Label layoutX="624.0" layoutY="567.0" text="Contact:" textFill="#540202">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="20.0" layoutX="599.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/telephone.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="mail_centre2" layoutX="698.0" layoutY="569.0" text="mail" />
+      <Label fx:id="nom_centre3" layoutX="1004.0" layoutY="438.0" prefHeight="47.0" prefWidth="511.0" text="Nom centre">
+         <font>
+            <Font name="Times New Roman" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="1019.0" layoutY="491.0" text="Adresse:" textFill="RED">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresse_centre3" layoutX="1095.0" layoutY="493.0" text="adresse" />
+      <Label layoutX="1015.0" layoutY="528.0" text="Domaine:" textFill="#9a0808">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="domaine_centre3" layoutX="1095.0" layoutY="530.0" text="domaine" />
+      <ImageView fitHeight="36.0" fitWidth="20.0" layoutX="994.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/telephone.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1020.0" layoutY="567.0" text="Contact:" textFill="#540202">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="mail_centre3" layoutX="1095.0" layoutY="569.0" text="mail" />
+      <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="998.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/adresse.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="253.0" layoutY="604.0" onAction="#mailCentreAction" text="Contactez ce centre" />
+      <JFXButton layoutX="633.0" layoutY="618.0" onAction="#voirCentresAction" text="Voir les autres centres" textFill="#ff0808">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="278.0" layoutY="148.0" text="Nos recommandations pour vous!" textFill="#0d0202">
+         <font>
+            <Font name="Times New Roman" size="41.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
